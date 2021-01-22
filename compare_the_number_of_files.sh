@@ -10,11 +10,11 @@ echo ": Directory 2 : /media/das/backup/dicom_from_scanner/"
 echo ""
 echo ""
 
-#read -p "Enter the path of one directory : " DIR1
-DIR1="/media/das/MPC100_dicom_backup/dicom_from_scanner/"
+read -p "Enter the path of one directory : " DIR1
+#DIR1="/media/das/MPC100_dicom_backup/dicom_from_scanner/"
 
-#read -p "Enter the path of the other directory : " DIR2
-DIR2="/media/cocoan_mri/dicom_from_scanner/MPC100/"
+read -p "Enter the path of the other directory : " DIR2
+#DIR2="/media/cocoan_mri/dicom_from_scanner/MPC100/"
 
 # the number of files
 DIR1_N=(`ls -1 $DIR1 | wc -l`)
@@ -50,12 +50,13 @@ then
 		then
 			echo "..." $dir " is done..."
 		else
+			echo "Two sub directories of " $dir " have different number of files."
 			MISSING_DIR+=($dir)
 		fi
 
 	done
 else
-	echo "Two directories have differernt number of subdirectories"
+	echo "Two base directories have differernt number of sub directories."
 fi
 
 echo ""
@@ -65,7 +66,7 @@ echo "Below is the sub directories that mismatched each other."
 echo ${MISSING_DIR[@]}
 echo ""
 echo ""
-echo "The Script is done."
+echo "----END----."
 exit 0
 
 			
