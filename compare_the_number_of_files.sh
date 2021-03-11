@@ -61,6 +61,17 @@ done
 #echo "Will Compare these directories : " ${DIR1_SUBDIR[@]}
 #echo "dir2_subdir : " ${DIR1_SUBDIR[@]}
 
+while true
+do
+	read -r -p "Do you want to continue? (y/n) " choice
+                case "$choice" in
+                        n|N) exit 111;;
+                        y|Y) break;;
+                        *) echo "Response not valid";;
+                esac
+done
+
+
 echo ""
 echo ""
 echo "Now.....comapring is starting........."
