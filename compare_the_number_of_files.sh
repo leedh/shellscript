@@ -5,20 +5,20 @@ echo "===This script will compare the number of files between two directories ==
 echo ""
 echo ""
 echo ": for example, "
-echo ": Main      : /media/das/backup/dicom_from_scanner/"
-echo ": Reference : /media/das/dropbox/data/MPC/imaging/dicom_from_scanner/"
+echo ": Main      : /backup_drive/A/"
+echo ": Reference : /local_computer/A"
 echo ""
 echo ""
 
 read -p "Enter the path of main directory : " DIR1
-#DIR1="/media/das/MPC100_dicom_backup/dicom_from_scanner/"
+
 if [ ${DIR1: -1} != / ]
 then
        DIR1=$DIR1/
 fi       
 
 read -p "Enter the path of reference directory : " DIR2
-#DIR2="/media/cocoan_mri/dicom_from_scanner/MPC100/"
+
 if [ ${DIR2: -1} != / ]
 then
 	DIR2=$DIR2/
